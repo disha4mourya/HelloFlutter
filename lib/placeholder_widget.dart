@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/rounded_model.dart';
 
 class PlaceholderWidget extends StatelessWidget {
   final Color color;
@@ -22,7 +23,7 @@ class PlaceholderWidget extends StatelessWidget {
               ),
               new GestureDetector(
                 onTap: () {
-                  showModalBottomSheet<void>(
+                  showRoundedModalBottomSheet<void>(
                       context: context,
                       builder: (BuildContext context) {
                         return new Container(
@@ -34,29 +35,28 @@ class PlaceholderWidget extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: new BorderRadius.only(
                                     topLeft: const Radius.circular(50.0),
-                                    topRight: const Radius.circular(10.0))),
-                            child: new Center(
+                                    topRight: const Radius.circular(50.0))),
+
                               child: new Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
                                   new ListTile(
-                                    leading: new Icon(Icons.view_column),
-                                    title: new Text('View Profile'),
+                                    leading: new Icon(Icons.star_border),
+                                    title: new Text('Add to shortlist'),
                                     onTap: () => Navigator.pop(context),
                                   ),
                                   new ListTile(
-                                    leading: new Icon(Icons.send),
-                                    title: new Text('Send Request'),
+                                    leading: new Icon(Icons.highlight_off),
+                                    title: new Text("Don't show me this profile again"),
                                     onTap: () => Navigator.pop(context),
                                   ),
                                   new ListTile(
-                                    leading: new Icon(Icons.phone),
-                                    title: new Text('Contact Details'),
+                                    leading: new Icon(Icons.change_history),
+                                    title: new Text('Report/Block Profile'),
                                     onTap: () => Navigator.pop(context),
                                   ),
                                 ],
                               ),
-                            ),
                           ),
                         );
                       });

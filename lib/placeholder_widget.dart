@@ -40,21 +40,36 @@ class PlaceholderWidget extends StatelessWidget {
                               child: new Column(
                                 mainAxisSize: MainAxisSize.min,
                                 children: <Widget>[
-                                  new ListTile(
-                                    leading: new Icon(Icons.star_border),
-                                    title: new Text('Add to shortlist'),
-                                    onTap: () => Navigator.pop(context),
+                                  ListTileTheme(
+
+                                    selectedColor: Colors.redAccent,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                                        children: <Widget>[
+                                          new ListTile(
+
+                                            leading: new Icon(Icons.star_border),
+
+                                            title: new Text('Add to shortlist'),
+                                            onTap: () => Navigator.pop(context),
+                                          ),
+                                          new ListTile(
+                                            leading: new Icon(Icons.highlight_off),
+                                            title: new Text("Don't show me this profile again"),
+                                            onTap: () => Navigator.pop(context),
+                                          ),
+                                          new ListTile(
+                                            leading: new Icon(Icons.change_history),
+                                            title: new Text('Report/Block Profile'),
+                                            onTap: () => Navigator.pop(context),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
                                   ),
-                                  new ListTile(
-                                    leading: new Icon(Icons.highlight_off),
-                                    title: new Text("Don't show me this profile again"),
-                                    onTap: () => Navigator.pop(context),
-                                  ),
-                                  new ListTile(
-                                    leading: new Icon(Icons.change_history),
-                                    title: new Text('Report/Block Profile'),
-                                    onTap: () => Navigator.pop(context),
-                                  ),
+
                                 ],
                               ),
                           ),
